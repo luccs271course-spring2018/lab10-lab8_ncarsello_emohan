@@ -8,9 +8,9 @@ import org.junit.Test;
 
 public class TestWordCounter {
 
-  // TODO complete this test class
+  // done complete this test class
 
-  // TODO declare a reference to the SUT (system under test), i.e., WordCounter
+  // done declare a reference to the SUT (system under test), i.e., WordCounter
 
   
   Map<String, Integer> zMap = new HashMap<>();

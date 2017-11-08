@@ -1,9 +1,8 @@
 package edu.luc.cs271.wordcount;
 
+import java.io.*;
 import java.util.Comparator;
 import java.util.Map;
-import java.util.Scanner;
-import java.io.*;
 
 /** The comparison strategy for sorting the array by the word count. */
 public class DescendingByCount implements Comparator<Map.Entry<String, Integer>> {

@@ -1,4 +1,4 @@
-ackage edu.luc.cs271.wordcount;
+package edu.luc.cs271.wordcount;
 
 import java.util.*;
 import java.util.Scanner;
@@ -14,30 +14,28 @@ public class Main {
     //final Scanner input = new File(input.nextLine());
     //input = new Scanner(file);
 
-    
-  
+
 
     // DONE?TODO complete this main program
     // 1. create a WordCounter instance
-    WordCounter wordy = new WordCounter (new HashMap<>());
+    Map<String, Integer> newMap = new HashMap<>();
+    WordCounter wordy = new WordCounter(newMap); 
     // 2. use this to count the words in the input
     wordy.countWords(input);
     // 3. determine the size of the resulting map
-    Map<String,Integer> map2 = wordy.getCounts();
-    int size = map2.size();
+      int size = newMap.values().size();
+
     // 4. create an ArrayList of that size and
     ArrayList sizes = new ArrayList(size);
     // 5. store the map's entries in it (these are of type Map.Entry<String, Integer>
-    for(Map.Entry<String,Integer> Entry: map2.entrySet());{
-      sizes.add(input);
-    }
+        List<newMap.Entry<String, Integer>> entries = new ArrayList<>(size);
+    entries.addAll(wordy.values().entrySet());
     // 6. sort the ArrayList in descending order by count
     //    using Arrays.sort and an instance of the provided comparator (after fixing the latter)
     Map<String, List<String>> contacts = new TreeMap<String,  List<String>>();
 
     //ArrayList arrraylist = Arrays.sort(DescendingByCount);
     // 7. print the (up to) ten most frequent words in the text
-
     for(int i=0;i<words.length;i++)
 {
      String s = nextLine[i];
@@ -49,8 +47,6 @@ public class Main {
      else
           words_count.put(s, 1);
 }
-    
-    
     
 
   }

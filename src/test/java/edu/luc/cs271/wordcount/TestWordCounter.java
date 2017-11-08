@@ -12,31 +12,42 @@ public class TestWordCounter {
 
   // TODO declare a reference to the SUT (system under test), i.e., WordCounter
 
+  
+  Map<String, Integer> zMap = new HashMap<>();
+  WordCounter count = new WordCounter(zMap); 
+
   @Before
   public void setUp() {
-    // TODO create the SUT instance
+    // done create the SUT instance
+    this.count = count;
   }
 
   @After
   public void tearDown() {
-    // TODO set the SUT instance to null
+    // done  set the SUT instance to null
+    count = null;
+    
   }
 
   @Test
   public void testGetCountEmpty() {
 
-    // TODO verify that the SUT initially returns an empty map
-    fail();
-
+    // done verify that the SUT initially returns an empty map
+    assertTrue(zMap.isEmpty)
   }
 
   @Test
   public void testGetCountNonEmpty() {
+    int correctCounts = WordCounter.getCount("the");
+    assertEquals(correctCounts, 15);
+    int correctCountsTwo = WordCounter.getCount("and");
+    asssertEquals(correctCountsTwo, 12);
+    int correctCountsThree = WordCounter.getCount("qwerty");
+    asssertEquals(correctCountsThree, 15);
+    int correctCountsFour = WordCounter.getCount("poop");
+    asssertEquals(correctCountsFour, 0);
 
-    // TODO run the SUT on a specific String iterator with some repeated words,
-    // then use assertions to verify the correct counts
-    // do this for at least two words in the iterator and two not in the iterator
-    fail();
+
 
   }
 }

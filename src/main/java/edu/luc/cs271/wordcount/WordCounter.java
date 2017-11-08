@@ -3,6 +3,8 @@ package edu.luc.cs271.wordcount;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Scanner;
+import java.io.*;
 
 /** A map-based class for counting word frequencies from an iterator. */
 public class WordCounter {
@@ -14,7 +16,7 @@ public class WordCounter {
   public WordCounter(final Map<String, Integer> theMap) {
 
     // TODO
-    this.theMap = null;
+    this.theMap = theMap;
 
   }
 
@@ -23,19 +25,30 @@ public class WordCounter {
 
     // TODO for each word in the iterator, update the corresponding frequency in the map
     // HINT to do this without a conditional, use the getOrDefault method
-
+            while (words.hasNext()) {
+            String word = words.next();
+            if (theMap.getOrDefault(word, -1)==-1){
+               theMap.put(word, 1);
+            }
+            else {
+              theMap.put(word, theMap.get(word)+1);
+            }
+            //wordCounts.put(next, wordCounts.get(next) + 1);
   }
 
+  
+  }
   /** Retrieve the frequency of a particular word. */
   public int getCount(final String word) {
 
     // TODO
-    return -1;
+    return theMap.get(word);
 
   }
 
   /** Retrieve the map representing all word frequencies. */
   public Map<String, Integer> getCounts() {
     return Collections.unmodifiableMap(theMap);
-  }
 }
+}
+
